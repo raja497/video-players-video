@@ -80,7 +80,7 @@ async def video(_, message: Message):
             info_dict = ydl.extract_info(link, download=False)
             video_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        caption = f'🏷 <b>Video Name:</b> <code>{title}</code>\n🔅 <b>Video Channel:</b> <code>{channel}</code>\n👀 <b>Video Views:</b> <code>{views}</code>\n🎧 <b>Requested By:</b> {message.from_user.mention()} \n📤 <b>Uploaded By: <a href="https://t.me/AsmSafone">🇧🇩 Ｓ１ ＢＯＴＳ</a></b>'
+        caption = f'🏷 <b>Video Name:</b> <code>{title}</code>\n🔅 <b>Video Channel:</b> <code>{channel}</code>\n👀 <b>Video Views:</b> <code>{views}</code>\n🎧 <b>Requested By:</b> {message.from_user.mention()} \n📤 <b>Uploaded By: <a href="https://t.me/abhinasroy">🇮🇳 Ｓ１ ＢＯＴＳ</a></b>'
         buttons = InlineKeyboardMarkup([[InlineKeyboardButton("Watch On YouTube", url=f'{link}')]])
         await k.edit("📤 **Uploading, Please Wait...**")
         await message.reply_video(video_file, caption=caption, parse_mode='HTML', file_name=title, duration=duration, thumb=thumb_name, reply_markup=buttons, supports_streaming=True)
